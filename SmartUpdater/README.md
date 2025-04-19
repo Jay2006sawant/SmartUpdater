@@ -34,65 +34,22 @@ DB_NAME=smartupdater
 PORT=8080
 ```
 
-### Installation
+## 📚 Project Structure
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/yourusername/smartupdater.git
-   cd smartupdater
-   ```
-
-2. Install dependencies:
-   ```bash
-   go mod download
-   ```
-
-3. Set up the database:
-   ```bash
-   psql -U postgres
-   CREATE DATABASE smartupdater;
-   ```
-
-4. Run migrations:
-   ```bash
-   go run cmd/migrate/main.go
-   ```
-
-### Running the Application
-
-1. Start the server:
-   ```bash
-   go run cmd/server/main.go
-   ```
-
-2. The server will start on `http://localhost:8080`
-
-## 📚 API Documentation
-
-### Endpoints
-
-- `GET /api/v1/health` - Health check
-- `GET /api/v1/metrics` - Prometheus metrics
-- `GET /api/v1/stats` - Update statistics
-- `POST /api/v1/repositories` - Add repository for monitoring
-- `GET /api/v1/repositories` - List monitored repositories
-- `GET /api/v1/schedule` - Get update schedule
-- `POST /api/v1/schedule` - Modify update schedule
-
-## 📊 Monitoring
-
-Access metrics dashboard:
-1. Prometheus: `http://localhost:9090`
-2. Grafana: `http://localhost:3000`
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create your feature branch
-3. Commit your changes
-4. Push to the branch
-5. Create a Pull Request
+```
+smartupdater/
+├── cmd/
+│   ├── migrate/    # Database migration tool
+│   └── server/     # Main application server
+├── internal/
+│   ├── api/        # REST API handlers
+│   ├── config/     # Configuration management
+│   ├── models/     # Database models
+│   ├── services/   # Core business logic
+│   └── tests/      # Test suites
+└── docs/           # Documentation
+```
 
 ## 📝 License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details. 
+This project is licensed under the MIT License. 
